@@ -9,14 +9,13 @@ from utils import auth  # Assuming Firebase Auth utility is in the utils folder
 MODEL_PATH = "/Users/apple/Desktop/healthConnect/model/Model_with_Tokenizer/model"  # Path to the directory containing the model and tokenizer
 
 # Load the trained model and tokenizer
-# model = AutoTokenizer.from_pretrained(MODEL_PATH)
 model = tf.saved_model.load('/Users/apple/Desktop/healthConnect/model/Model_with_Tokenizer/model/')
 
 # Load tokenizer
 MODEL_NAME = "dmis-lab/biobert-base-cased-v1.1"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)  # Tokenizer is also in the same directory
 
-# Disease label mappings (adjust based on your label2int mapping)
+# Disease label mappings 
 label2int = {
     'Psoriasis': 0,
     'Varicose Veins': 1,
@@ -60,25 +59,7 @@ def predict_diseases(symptoms: str):
     Returns:
     - (dict): A dictionary with predicted disease and its confidence score.
     """
-    # # Tokenize the input symptoms text
-    # encoded_input = tokenizer(symptoms, padding="max_length", truncation=True, max_length=MAX_LENGTH, return_tensors='tf')
-
-    # # Get model predictions
-    # predictions = model(encoded_input)
     
-    # # Extract the prediction probabilities (softmax outputs)
-    # logits = predictions.logits
-    # probabilities = tf.nn.softmax(logits, axis=-1).numpy()
-
-    # # Get top 3 predicted diseases
-    # top_3_indices = np.argsort(probabilities[0])[::-1][:3]  # Sort in descending order and take top 3
-    # top_3_predictions = [
-    #     {
-    #         "label": int2label[idx],
-    #         "score": float(probabilities[0][idx])
-    #     }
-    #     for idx in top_3_indices
-    # ]
 
     # Assuming 'output' is your TFSequenceClassifierOutput object
     symptoms = tokenizer(symptoms, return_tensors="tf", padding=True, truncation=True, max_length=512)

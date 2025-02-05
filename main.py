@@ -2,10 +2,9 @@ import streamlit as st
 from utils.auth import login, sign_up, is_user_logged_in, initialize_firebase
 from utils.google_maps import get_nearest_health_facility
 from utils.google_calendar import create_appointment
-#from utils.sentiment_analysis import analyze_mood
 from utils.hydration_tracker import store_hydration
 from utils.symptom_checker import predict_diseases
-from utils.chatbot import get_therapist_response  # Import the chatbot functionality
+from utils.chatbot import get_therapist_response  
 
 # Initialize Firebase
 initialize_firebase()
@@ -95,6 +94,7 @@ else:
 
     else:
         # Main app content when chatbot is not active
+        
         # Symptom Checker
         st.header("Symptom Checker")
         symptoms_input = st.text_input("Enter your symptoms:")
@@ -110,21 +110,7 @@ else:
             else:
                 st.write("Sorry, no diseases could be predicted based on the input.")
 
-        # # Mental Health Support
-        # st.header("Mental Health Support")
-        # mood_input = st.text_area("How are you feeling today?")
-        # if mood_input:
-        #     mood_analysis = analyze_mood(mood_input)
-        #     st.write(f"Sentiment: {mood_analysis['label']} (Confidence: {mood_analysis['score']})")
-        #     if mood_analysis["label"] == "NEGATIVE":
-        #         st.write("Consider practicing mindfulness or speaking to a counselor.")
-
-        # # Hydration Tracking
-        # st.header("Track Hydration")
-        # glasses = st.number_input("Enter glasses of water consumed today:", min_value=0)
-        # if st.button("Log Hydration"):
-        #     store_hydration(st.session_state["user_id"], glasses)
-        #     st.write(f"You’ve drunk {glasses} glasses of water today!")
+       
 
         # Appointment Scheduling
         st.header("Schedule an Appointment")
