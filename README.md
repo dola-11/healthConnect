@@ -5,22 +5,25 @@ HealthConnect is an AI-powered health assistant that provides symptom checking, 
 ---
 ## 📸 **Model Features**
 
-### **Login Page : **
+### Login Page : 
 
 ![Login page](images/login_page.png)
 
-### **Symptom Checker : **
+### Symptom Checker : 
 
 ![Symptom Checker](images/Symptom_Checker.png)
 
-### **Appointment Scheduling : **
+### Appointment Scheduling : 
 
 ![Appointment Scheduling](images/appointment_scheduling.png)
 
-### **AI-Therapist Chatbot : **
+### Emergency Assistance : 
+
+![Emergency Assistance](images/emergency_assistance.png)
+
+### AI-Therapist Chatbot : 
 
 ![AI-Therapist Chatbot](images/AI_Therapist_Chatbot.png)
-
 ---
 
 ## *Features* 🚀  
