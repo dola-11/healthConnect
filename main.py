@@ -65,7 +65,7 @@ else:
 
         # Chatbot UI
         st.title("🧠 AI Therapist Chatbot")
-        st.write("### Share how you're feeling, and I'll provide ongoing support in a chat format.")
+        st.write("### Share how you're feeling")
 
         # Display chat messages from history
         for message in st.session_state.chat_history:
@@ -94,7 +94,7 @@ else:
 
     else:
         # Main app content when chatbot is not active
-        
+
         # Symptom Checker
         st.header("Symptom Checker")
         symptoms_input = st.text_input("Enter your symptoms:")
